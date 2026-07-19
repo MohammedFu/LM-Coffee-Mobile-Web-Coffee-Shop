@@ -1,50 +1,126 @@
-# Welcome to your Expo app 👋
+# LM Coffee — Mobile & Web Coffee Shop
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A small Expo + React Native demo app showcasing a Coffee Shop UI: a landing screen with background art, a menu list, and a contact page with phone/sms links and hours. Built with Expo Router (file-based routing) and designed to run on iOS, Android, and web.
 
-## Get started
+---
 
-1. Install dependencies
+## screenshots
 
-   ```bash
-   npm install
-   ```
+ `assets/images/iced-coffee.png`.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Features
 
-In the output, you'll find options to open the app in a
+- Expo-based universal app (iOS, Android, web)
+- File-based routing via `expo-router`
+- Light / Dark theme support using `Appearance`
+- Menu list with images and descriptions (FlatList)
+- Contact screen with click-to-call and SMS links
+- Simple, self-contained constants for colors, menu items, and images
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tech stack
 
-## Get a fresh project
+- Expo SDK 53
+- React 19
+- React Native 0.79.2
+- expo-router (file-based routing)
+- @expo/vector-icons, react-navigation
+- JavaScript / JSX (project scaffolded with TypeScript config)
 
-When you're ready, run:
+---
+
+## Quick start
+
+Prerequisites
+- Node.js (recommended LTS)
+- npm (or yarn)
+- Expo CLI available via `npx` (no global install required)
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npx expo start
+```
+
+Open directly:
+- Android emulator: `npm run android`
+- iOS simulator: `npm run ios`
+- Web: `npm run web`
+
+Reset the starter project (moves current starter to `app-example` and creates a blank `app/` folder):
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Lint:
 
-## Learn more
+```bash
+npm run lint
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Project structure
 
-## Join the community
+```
+app/                    # File-based routes (expo-router)
+  index.jsx             # Home / landing screen (background image, navigation)
+  menu.jsx              # Menu screen (FlatList of MENU_ITEMS)
+  contact.jsx           # Contact screen (phone, sms, hours)
+  _layout.tsx           # App layout / navigation shell
+  +not-found.tsx        # 404 / not found
 
-Join our community of developers creating universal apps.
+assets/                 # Images and static assets (e.g. iced-coffee.png)
+constants/              # Colors.ts, MenuItems.js, MenuImages.js
+components/             # Reusable UI components (small or empty)
+scripts/reset-project.js# Utility used by `npm run reset-project`
+package.json            # Scripts and deps (expo, expo-router, react)
+app.json, eas.json      # Expo and EAS configuration
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Files of interest
+
+- `app/index.jsx` — home screen and navigation links
+- `app/menu.jsx` — menu UI using `constants/MenuItems.js` and `constants/MenuImages.js`
+- `app/contact.jsx` — contact details and click-to-call/SMS links
+- `constants/Colors.ts` — theme color tokens (light/dark)
+- `scripts/reset-project.js` — helper used by `npm run reset-project`
+
+---
+
+## Recommendations & next steps
+
+- Convert `constants/MenuItems.js` and `constants/MenuImages.js` to TypeScript for better typing and editor experience.
+- Move contact details (phone number, address, hours) into a config file or environment variables if you expect to reuse this for multiple shops.
+- Add unit/UI tests for `Menu` and `Contact` (e.g. with Jest + @testing-library/react-native).
+- Consider adding deep-linking and share functionality for menu items.
+
+---
+
+## Contributing
+
+Contributions welcome. If you add features, please:
+1. Fork and create a feature branch.
+2. Run `npm install` and add/update tests.
+3. Open a pull request with a clear description.
+
+---
+
+## Contact
+
+The contact info inside the app:
+- Store: LM Coffee Lane
+- City: Sana'a City, Yemen
+- Phone: 770-180-062
