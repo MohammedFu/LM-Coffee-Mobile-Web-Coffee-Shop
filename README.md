@@ -4,12 +4,6 @@ A small Expo + React Native demo app showcasing a Coffee Shop UI: a landing scre
 
 ---
 
-## screenshots
-
- `assets/images/iced-coffee.png`.
-
----
-
 ## Features
 
 - Expo-based universal app (iOS, Android, web)
